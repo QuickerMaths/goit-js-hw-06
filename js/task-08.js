@@ -14,5 +14,6 @@ loginForm.addEventListener("submit", (e) => {
       email: email.value,
       password: password.value,
     });
+    e.currentTarget.reset();
   }
 });

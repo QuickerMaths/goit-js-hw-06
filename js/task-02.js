@@ -6,15 +6,13 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-
-const btn = document.getElementById("btn");
 const listEl = document.getElementById("ingredients");
 
-btn.addEventListener("click", () => {
-  for (let i = 0; i < ingredients.length; i++) {
-    const listItem = document.createElement("li");
-    listItem.classList.add("item");
-    listItem.innerHTML = `${ingredients[i]}`;
-    listEl.appendChild(listItem);
-  }
+const ingredientsList = ingredients.map((ingredient) => {
+  const listItem = document.createElement("li");
+  listItem.classList.add("item");
+  listItem.textContent = ingredient;
+  return listItem;
 });
+
+listEl.append(...ingredientsList);
